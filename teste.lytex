@@ -1,0 +1,106 @@
+% -*- latex -*-
+% -*- coding: latin-1 -*-
+ 
+\documentclass[twoside,12pt]{article}
+\usepackage{graphicx}
+% \usepackage{artigos}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{nameref}
+\usepackage{fancyhdr}
+\usepackage[brazil]{babel}              % Acrescentado por Givaldo de Cidra
+\usepackage{url}
+%\usepackage{makeidx}                    % pkg para índice remissivo
+\usepackage{setspace}
+\usepackage{titletoc}
+
+%% novos pacotes
+%%\usepackage{lastpage}
+\usepackage{wrapfig}
+
+
+\pagestyle{empty}
+
+
+
+% \usepackage{ifthen}
+
+\titlecontents{section}
+[2 em]
+{}
+{\contentslabel{2em}}
+{\hspace*{-2.3em}}
+{\titlerule*[1pc]{.}\contentspage}
+
+
+% \newcommand{\betweenLilyPondSystem}[1]{
+% \ifthenelse{\equal{#1}{1}}{\nopagebreak\linebreak
+% }{\linebreak}
+% }
+
+\newcommand{\instrumento}[1]{ \textit{#1} }
+
+\pagestyle{fancy}                       % Sets fancy header and footer
+
+\fancyhf{}
+\fancyfoot[RLOEF]{\bfseries\rightmark}     % Oculta o nome das seções
+
+%%Página Ímpar
+\fancyfoot[LO]{\textit{Da Capo Fanfarra - \instrumento{Rodape}}}
+\fancyfoot[RO]{\thepage}
+
+
+%%Página Par
+\fancyfoot[LE]{\textit{Joel Barbosa}}
+\fancyfoot[RE]{\thepage}
+
+\renewcommand{\headrulewidth}{0.0pt}    % Width of head rule
+\renewcommand{\footrulewidth}{0.0pt}    % Width of foot rule
+
+% não espaçar pra encher as páginas:
+\raggedbottom
+
+% \makeindex
+
+\newcommand{\tpt}[1]{Trompete \\ Bombardino \\ Trombone}
+\newcommand{\letraquadrada}[1]{ \Large{\framebox[1.1\width]{#1} }}
+\newcommand{\quadtitulo}[1]{ \large{\textbf{#1} }}
+\newcommand{\quadtexto}[1]{\small{\textbf{#1}}}
+
+
+\begin{document}
+\graphicspath{
+  {../figs/}
+  {../figs/posicoes/}
+  {../figs/quadro/}
+}
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% 
+% INSIRA O CÓDIGO A PARTIR DAQUI:
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\section{Primeira Lição}
+\label{sec:primeira-licao}
+\begin{lilypond}
+  \transpose c c {
+    \keepWithTag #'ct
+    \include "ct-001.ly"}
+\end{lilypond}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% 
+% FINAL DO CÓDIGO
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\end{document}
